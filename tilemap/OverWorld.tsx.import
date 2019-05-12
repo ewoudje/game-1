@@ -1,0 +1,20 @@
+[remap]
+
+importer="vnen.tiled_tileset_importer"
+type="TileSet"
+path="res://.import/OverWorld.tsx-8da3cba829e19d4c5e212732a4edd250.res"
+
+[deps]
+
+source_file="res://tilemap/OverWorld.tsx"
+dest_files=[ "res://.import/OverWorld.tsx-8da3cba829e19d4c5e212732a4edd250.res" ]
+
+[params]
+
+custom_properties=true
+tile_metadata=false
+image_flags=0
+embed_internal_images=true
+save_tiled_properties=false
+apply_offset=false
+post_import_script=""
