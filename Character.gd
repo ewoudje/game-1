@@ -2,6 +2,12 @@ extends KinematicBody2D
 
 export (int) var speed = 200;
 
+var current_interactor: Node2D;
+
+func interact():
+	if current_interactor:
+		current_interactor.on_interact(self);
+
 var velocity = Vector2();
 
 func get_input():
@@ -17,8 +23,12 @@ func get_input():
     velocity = velocity.normalized() * speed;
 
 func _physics_process(delta):
-    get_input();
-    move_and_slide(velocity);
+	get_input();
+	move_and_slide(velocity);
+
+func _process(delta):
+	if Input.is_action_pressed('interact'):
+		interact();
 
 export (int) var level = 0;
 
@@ -37,4 +47,7 @@ func _on_body_exited(body):
 	for e in entered:
 		fall = max(e, fall);
 	level = fall;
+	update_mask();
+
+func _ready():
 	update_mask();
