@@ -3,14 +3,12 @@
 [ext_resource path="res://Character.gd" type="Script" id=1]
 [ext_resource path="res://assets/test.png" type="Texture" id=2]
 
-
 [sub_resource type="CircleShape2D" id=1]
 resource_name = "CharacterShape"
 radius = 16.2457
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="Character" type="KinematicBody2D"]
 position = Vector2( 362.914, 102.434 )
-input_pickable = true
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -35,6 +33,12 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
 __meta__ = {
 "_edit_lock_": true
 }
