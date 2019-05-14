@@ -2,8 +2,15 @@ extends Sprite
 
 var interactive = true;
 
-func init_object():
-	pass
+var ladders;
+
+func init_object(world_data: Node):
+	ladders = world_data.get_node('Ladders');
+	ladders.add_ladder(get_meta('ConnectID'), self);
 
 func on_interact(character: KinematicBody2D):
-	character.position = Vector2(0,0);
+	var ladder = ladders.get_ladder(get_meta('ConnectTo'));
+	character.position = ladder.position;
+	character.level = ((0x3FF << (ladder.get_meta('Level') + 1)) ^ 0x3FF) & 0x3FF;
+	character.entered = [character.level];
+	character.update_mask();

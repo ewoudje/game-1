@@ -26,9 +26,15 @@ func _physics_process(delta):
 	get_input();
 	move_and_slide(velocity);
 
+var bump = false;
+
 func _process(delta):
-	if Input.is_action_pressed('interact'):
+	if Input.is_action_pressed('interact') && !bump:
 		interact();
+		bump = true;
+	
+	if Input.is_action_just_released('interact'):
+		bump = false;
 
 export (int) var level = 0;
 
@@ -42,7 +48,10 @@ func _on_body_entered(body):
 
 
 func _on_body_exited(body):
-	entered.remove(entered.find(body.collision_layer));
+	var n = entered.find(body.collision_layer)
+	if n == -1:
+		return;
+	entered.remove(n);
 	var fall = 0;
 	for e in entered:
 		fall = max(e, fall);

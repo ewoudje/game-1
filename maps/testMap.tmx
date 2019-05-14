@@ -221,8 +221,26 @@
 33,33,33,33,33,33,33,33,33,33,33,33,33,28,51,0,
 33,33,33,33,33,33,33,33,33,33,33,33,28,51,0,0,
 33,33,33,33,33,33,33,33,33,33,33,28,55,0,0,0,
-52,52,52,52,52,52,52,52,29,33,33,21,0,0,0,0,
-0,0,0,0,0,0,0,0,50,52,52,51,0,0,0,0
+52,52,52,52,52,52,52,29,33,33,33,21,0,0,0,0,
+0,0,0,0,0,0,0,20,33,33,33,21,0,0,0,0
+</chunk>
+   <chunk x="0" y="16" width="16" height="16">
+0,0,0,0,0,0,0,50,52,52,52,51,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </chunk>
   </data>
  </layer>
@@ -282,36 +300,42 @@
    <properties>
     <property name="ConnectID" value="top"/>
     <property name="ConnectTo" value="bottom"/>
+    <property name="Level" type="int" value="2"/>
    </properties>
   </object>
   <object id="34" gid="1026" x="300" y="475" width="32" height="32">
    <properties>
     <property name="ConnectID" value="highLow"/>
     <property name="ConnectTo" value="midLow"/>
+    <property name="Level" type="int" value="1"/>
    </properties>
   </object>
   <object id="35" gid="1026" x="-95" y="95" width="32" height="32">
    <properties>
     <property name="ConnectID" value="highHigh"/>
     <property name="ConnectTo" value="top"/>
+    <property name="Level" type="int" value="1"/>
    </properties>
   </object>
   <object id="36" gid="1026" x="-90" y="-31" width="32" height="32">
    <properties>
     <property name="ConnectID" value="midHigh"/>
     <property name="ConnectTo" value="bottom"/>
+    <property name="Level" type="int" value="0"/>
    </properties>
   </object>
   <object id="37" gid="1026" x="-209" y="-47" width="32" height="32">
    <properties>
     <property name="ConnectID" value="bottom"/>
     <property name="ConnectTo" value="midHigh"/>
+    <property name="Level" type="int" value="-1"/>
    </properties>
   </object>
   <object id="38" gid="1026" x="-137" y="451" width="32" height="32">
    <properties>
     <property name="ConnectID" value="midLow"/>
     <property name="ConnectTo" value="highLow"/>
+    <property name="Level" type="int" value="0"/>
    </properties>
   </object>
  </objectgroup>

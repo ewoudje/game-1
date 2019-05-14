@@ -3,7 +3,6 @@ extends Node2D
 export (Shape2D) var interaction_shape;
 export (Dictionary) var objects = {};
 
-
 func _ready():
 	var children = get_children();
 	for child in children:
@@ -11,7 +10,7 @@ func _ready():
 			var script = objects[child.get_meta('ObjectID')];
 			child.set_script(script);
 			if child.has_method('init_object'):
-				child.init_object();
+				child.init_object(get_node('..').world_data);
 			if child.get('interactive'):
 				var shape = CollisionShape2D.new();
 				shape.shape = interaction_shape;
@@ -26,7 +25,7 @@ func _ready():
 				child.add_child(area);
 
 func close_to_interactable_in(body, object):
-	get_node('..').gui_update('show_key_info', ['E',  object.position + Vector2(40, 40), object.name]);
+	get_node('..').gui_update('show_key_info', ['E',  object.position - Vector2(10, 10), object.name]);
 	body.current_interactor = object;
 
 func close_to_interactable_out(body, object):

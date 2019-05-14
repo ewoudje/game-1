@@ -2,7 +2,7 @@ extends Sprite
 
 var light_texture = preload("res://assets/licht.png");
 
-func init_object():
+func init_object(world_data):
 	var light = Light2D.new();
 	light.color = Color("#f2ae7c");
 	light.shadow_enabled = true;
