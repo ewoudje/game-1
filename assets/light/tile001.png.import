@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/licht.png-0450296b3d9aab1dd12c40dce05dd89e.stex"
+path="res://.import/tile001.png-d139d2f5de2a0507babeb2a17b5f7ba9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/licht.png"
-dest_files=[ "res://.import/licht.png-0450296b3d9aab1dd12c40dce05dd89e.stex" ]
+source_file="res://assets/light/tile001.png"
+dest_files=[ "res://.import/tile001.png-d139d2f5de2a0507babeb2a17b5f7ba9.stex" ]
 
 [params]
 
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

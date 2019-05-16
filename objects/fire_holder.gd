@@ -1,6 +1,6 @@
 extends Sprite
 
-var light_texture = preload("res://assets/licht.png");
+var light_texture = preload("res://assets/light/tile000.png");
 
 func init_object(world_data):
 	var light = Light2D.new();

@@ -21,9 +21,10 @@ __meta__ = {
 world_data = NodePath("../../WorldData")
 
 [node name="Character" parent="CanvasModulate" instance=ExtResource( 3 )]
-position = Vector2( 232.388, 296.118 )
+position = Vector2( 156.927, 224.764 )
 collision_layer = 1024
 collision_mask = 0
+speed = 100
 level = 7
 
 [node name="WorldGUI" type="Control" parent="."]

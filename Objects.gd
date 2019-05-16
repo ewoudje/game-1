@@ -25,8 +25,9 @@ func _ready():
 				child.add_child(area);
 
 func close_to_interactable_in(body, object):
-	get_node('..').gui_update('show_key_info', ['E',  object.position - Vector2(10, 10), object.name]);
-	body.current_interactor = object;
+	if object.can_interact(body):
+		get_node('..').gui_update('show_key_info', ['E',  object.position - Vector2(10, 10), object.name]);
+		body.current_interactor = object;
 
 func close_to_interactable_out(body, object):
 	get_node('..').gui_update('remove_key_info', [object.name]);
