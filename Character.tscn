@@ -1,7 +1,10 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Character.gd" type="Script" id=1]
 [ext_resource path="res://assets/character.png" type="Texture" id=2]
+[ext_resource path="res://Weapon.gd" type="Script" id=3]
+[ext_resource path="res://assets/sword.png" type="Texture" id=4]
+[ext_resource path="res://assets/airslashes.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10.3596, 14.1853 )
@@ -41,6 +44,23 @@ __meta__ = {
 [node name="Shape" type="CollisionShape2D" parent="."]
 position = Vector2( -0.135284, 2.16441 )
 shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="WeaponHolder" type="Node2D" parent="."]
+position = Vector2( 7.06027, 9.84457 )
+script = ExtResource( 3 )
+
+[node name="Weapon" type="Sprite" parent="WeaponHolder"]
+z_index = 1
+texture = ExtResource( 4 )
+offset = Vector2( 16, -16 )
+
+[node name="Swipe" type="Sprite" parent="WeaponHolder/Weapon"]
+position = Vector2( 16, -16 )
+z_as_relative = false
+texture = ExtResource( 5 )
 __meta__ = {
 "_edit_lock_": true
 }
