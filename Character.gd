@@ -20,13 +20,15 @@ func get_input():
         velocity.y += 1;
     if Input.is_action_pressed('top'):
         velocity.y -= 1;
-    velocity = velocity.normalized() * speed;
+    velocity = velocity.normalized();
 
 func _physics_process(delta):
 	get_input();
-	move_and_slide(velocity);
+	move_and_slide(velocity * speed);
 
 var bump = false;
+var update_frame = 0;
+var current_frame = 0;
 
 func _process(delta):
 	if Input.is_action_pressed('interact') && !bump:
@@ -35,6 +37,21 @@ func _process(delta):
 	
 	if Input.is_action_just_released('interact'):
 		bump = false;
+	
+	get_input();
+	
+	if update_frame > 1  || current_frame == 0:
+		if velocity == Vector2(0, 1):
+			current_frame = 1 if current_frame == 0 || current_frame == 2 else 2;
+		
+		update_frame = 0;
+	
+	if velocity == Vector2(0, 0):
+		current_frame = 0;
+	
+	update_frame += delta * 4;
+	
+	get_node("Sprite").frame = current_frame;
 
 export (int) var level = 0;
 
