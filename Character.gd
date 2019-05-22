@@ -1,8 +1,24 @@
 extends KinematicBody2D
 
 export (int) var speed = 200;
+export (NodePath) var gui;
 
 var current_interactor: Node2D;
+
+func has_dialog() -> bool:
+	return get_node(gui).dialog_handler.dialog != null;
+
+func set_dialog(dialog: Node, executer: Node, onEnd: String):
+	var handler = get_node(gui).dialog_handler;
+	handler.dialog = dialog;
+	handler.connect_dialog();
+	handler.connect('on_dialog_end', executer, onEnd, [], CONNECT_ONESHOT);
+	handler.dialog.start_dialogue();
+
+func remove_dialog():
+	var handler = get_node(gui).dialog_handler();
+	handler.dialog = null;
+	handler.disconnect_dialog();
 
 func interact():
 	if current_interactor:

@@ -1,0 +1,14 @@
+[gd_scene format=2]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -3.01468
+margin_bottom = -3.01465
+
+[node name="Label" type="Label" parent="."]
+margin_left = 464.658
+margin_top = 307.748
+margin_right = 544.658
+margin_bottom = 324.748
+text = "Good Job"

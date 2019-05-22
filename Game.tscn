@@ -1,12 +1,14 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://DayNightTime.gd" type="Script" id=1]
 [ext_resource path="res://TestScene.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Character.tscn" type="PackedScene" id=3]
-[ext_resource path="res://GUI.gd" type="Script" id=4]
-[ext_resource path="res://assets/key_font.tres" type="DynamicFont" id=5]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=6]
-[ext_resource path="res://world/Ladders.gd" type="Script" id=7]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://world/Ladders.gd" type="Script" id=5]
+[ext_resource path="res://npc/daugther/daugther.gd" type="Script" id=6]
+[ext_resource path="res://addons/dialogue_tree/scripts/dialogue.gd" type="Script" id=7]
+[ext_resource path="res://addons/dialogue_tree/assets/Icon.png" type="Texture" id=8]
+[ext_resource path="res://npc/daugther/intro.tres" type="Resource" id=9]
 
 [node name="Game" type="Node2D"]
 
@@ -21,31 +23,31 @@ __meta__ = {
 world_data = NodePath("../../WorldData")
 
 [node name="Character" parent="CanvasModulate" instance=ExtResource( 3 )]
-position = Vector2( 156.927, 224.764 )
+position = Vector2( 45.9283, 140.229 )
 collision_layer = 1024
 collision_mask = 0
 speed = 100
+gui = NodePath("../../GUI")
 level = 7
 
-[node name="WorldGUI" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-script = ExtResource( 4 )
-__meta__ = {
-"_edit_lock_": true
-}
-key_font = ExtResource( 5 )
-
-[node name="GUI" type="CanvasLayer" parent="."]
-layer = 2
-
-[node name="GUI" parent="GUI" instance=ExtResource( 6 )]
-script = null
+[node name="GUI" parent="." instance=ExtResource( 4 )]
 
 [node name="WorldData" type="Node" parent="."]
 
 [node name="Ladders" type="Node" parent="WorldData"]
+script = ExtResource( 5 )
+
+[node name="NPC" type="Node" parent="WorldData"]
+
+[node name="daugther" type="Node" parent="WorldData/NPC"]
+script = ExtResource( 6 )
+
+[node name="Intro" type="Node" parent="WorldData/NPC/daugther"]
 script = ExtResource( 7 )
+__meta__ = {
+"_editor_icon": ExtResource( 8 )
+}
+DialogueResource = ExtResource( 9 )
 
 [node name="UserData" type="Node" parent="."]
-[connection signal="gui_update" from="CanvasModulate/testMap" to="WorldGUI" method="_gui_update"]
+[connection signal="gui_update" from="CanvasModulate/testMap" to="GUI" method="_gui_update"]

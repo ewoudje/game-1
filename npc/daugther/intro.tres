@@ -1,0 +1,395 @@
+[gd_resource type="Resource" load_steps=3 format=2]
+
+[ext_resource path="res://addons/dialogue_tree/assets/ResIcon.png" type="Texture" id=1]
+[ext_resource path="res://addons/dialogue_tree/resource/dialogue_tree.gd" type="Script" id=2]
+
+[resource]
+script = ExtResource( 2 )
+__meta__ = {
+"_editor_icon": ExtResource( 1 )
+}
+connections = [ {
+"from": "StartNode",
+"from_port": 0,
+"to": "BasicDialogue",
+"to_port": 0
+}, {
+"from": "BasicDialogue",
+"from_port": 0,
+"to": "ChoiceDialogue",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 1,
+"to": "BasicDialogue3",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 0,
+"to": "BasicDialogue2",
+"to_port": 0
+}, {
+"from": "BasicDialogue3",
+"from_port": 0,
+"to": "ChoiceDialogue2",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue2",
+"from_port": 0,
+"to": "BasicDialogue5",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue2",
+"from_port": 1,
+"to": "BasicDialogue6",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue2",
+"from_port": 2,
+"to": "BasicDialogue7",
+"to_port": 0
+}, {
+"from": "BasicDialogue4",
+"from_port": 0,
+"to": "BasicDialogue8",
+"to_port": 0
+}, {
+"from": "BasicDialogue2",
+"from_port": 0,
+"to": "BasicDialogue9",
+"to_port": 0
+}, {
+"from": "BasicDialogue5",
+"from_port": 0,
+"to": "ChoiceDialogue3",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue",
+"from_port": 2,
+"to": "BasicDialogue4",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue3",
+"from_port": 1,
+"to": "BasicDialogue10",
+"to_port": 0
+}, {
+"from": "ChoiceDialogue3",
+"from_port": 0,
+"to": "BasicDialogue11",
+"to_port": 0
+} ]
+Nodes = [ {
+"filename": "res://addons/dialogue_tree/scenes/EndNode.tscn",
+"name": "EndNode",
+"rect_size_x": 80.0,
+"rect_size_y": 55.0,
+"rect_x": -842.0,
+"rect_y": 115.5
+}, {
+"filename": "res://addons/dialogue_tree/scenes/StartNode.tscn",
+"name": "StartNode",
+"rect_size_x": 87.0,
+"rect_size_y": 55.0,
+"rect_x": -842.0,
+"rect_y": 115.5
+}, {
+"Conditonal": false,
+"RefName": "",
+"choices": [ {
+"Conditional": "",
+"Dialogue": "Good",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "Bad",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "Always good when i see you",
+"ToolTip": ""
+} ],
+"filename": "res://addons/dialogue_tree/scenes/ChoiceDialogue.tscn",
+"name": "ChoiceDialogue",
+"rect_size_x": 244.0,
+"rect_size_y": 168.0,
+"rect_x": -382.0,
+"rect_y": 95.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "Me(w) too.",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue2",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": -62.0,
+"rect_y": 15.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "What happend?",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue3",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": -62.0,
+"rect_y": 135.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "Ooh thanks daddy!",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue4",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": -62.0,
+"rect_y": 255.5
+}, {
+"Conditonal": false,
+"RefName": "",
+"choices": [ {
+"Conditional": "",
+"Dialogue": "I saw your face",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "I didn't sleep well",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "You are adopted",
+"ToolTip": ""
+} ],
+"filename": "res://addons/dialogue_tree/scenes/ChoiceDialogue.tscn",
+"name": "ChoiceDialogue2",
+"rect_size_x": 210.0,
+"rect_size_y": 168.0,
+"rect_x": 138.0,
+"rect_y": 135.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "Hey how are you doing dad?",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue",
+"rect_size_x": 223.0,
+"rect_size_y": 124.0,
+"rect_x": -642.0,
+"rect_y": 95.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "What the fuck? I am adopted you motherfucker you told you were my daddy bitch! DIE",
+"RefName": "GameEND",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue7",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 438.0,
+"rect_y": 295.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "Well let's go to work i am going with you.",
+"RefName": "GoingEND",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue8",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 178.0,
+"rect_y": 375.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "Well you go to work dad!",
+"RefName": "NormalEND",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue9",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 158.0,
+"rect_y": 15.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "Fuck off",
+"RefName": "",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue5",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 438.0,
+"rect_y": 55.5
+}, {
+"Conditonal": false,
+"RefName": "",
+"choices": [ {
+"Conditional": "",
+"Dialogue": "Just a joke!",
+"ToolTip": ""
+}, {
+"Conditional": "",
+"Dialogue": "No why bitch?",
+"ToolTip": ""
+} ],
+"filename": "res://addons/dialogue_tree/scenes/ChoiceDialogue.tscn",
+"name": "ChoiceDialogue3",
+"rect_size_x": 210.0,
+"rect_size_y": 141.0,
+"rect_x": 658.0,
+"rect_y": 55.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "Reeeee, DIE",
+"RefName": "GameEND",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue10",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 938.0,
+"rect_y": 155.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "Wel you're still going to need to work...",
+"RefName": "NormalEND",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue6",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 438.0,
+"rect_y": 175.5
+}, {
+"Actor": "Daugther",
+"Dialogue": "Ha Ha very funny! Now go to work!",
+"RefName": "NormalEND",
+"filename": "res://addons/dialogue_tree/scenes/BasicDialogue.tscn",
+"name": "BasicDialogue11",
+"rect_size_x": 170.0,
+"rect_size_y": 114.0,
+"rect_x": 938.0,
+"rect_y": 35.5
+} ]
+DialogueTree = {
+"dialogue": [ {
+"Choices": [ {
+"Conditional": "",
+"Dialogue": "Good",
+"PassCondition": true,
+"ToolTip": "",
+"next": 1
+}, {
+"Conditional": "",
+"Dialogue": "Bad",
+"PassCondition": true,
+"ToolTip": "",
+"next": 2
+}, {
+"Conditional": "",
+"Dialogue": "Always good when i see you",
+"PassCondition": true,
+"ToolTip": "",
+"next": 3
+} ],
+"Conditonal": false,
+"NodeName": "ChoiceDialogue",
+"Ref": ""
+}, {
+"Actor": "Daugther",
+"Dialogue": "Me(w) too.",
+"NodeName": "BasicDialogue2",
+"Ref": "",
+"next": 8
+}, {
+"Actor": "Daugther",
+"Dialogue": "What happend?",
+"NodeName": "BasicDialogue3",
+"Ref": "",
+"next": 4
+}, {
+"Actor": "Daugther",
+"Dialogue": "Ooh thanks daddy!",
+"NodeName": "BasicDialogue4",
+"Ref": "",
+"next": 7
+}, {
+"Choices": [ {
+"Conditional": "",
+"Dialogue": "I saw your face",
+"PassCondition": true,
+"ToolTip": "",
+"next": 9
+}, {
+"Conditional": "",
+"Dialogue": "I didn't sleep well",
+"PassCondition": true,
+"ToolTip": "",
+"next": 12
+}, {
+"Conditional": "",
+"Dialogue": "You are adopted",
+"PassCondition": true,
+"ToolTip": "",
+"next": 6
+} ],
+"Conditonal": false,
+"NodeName": "ChoiceDialogue2",
+"Ref": ""
+}, {
+"Actor": "Daugther",
+"Dialogue": "Hey how are you doing dad?",
+"NodeName": "BasicDialogue",
+"Ref": "",
+"next": 0
+}, {
+"Actor": "Daugther",
+"Dialogue": "What the fuck? I am adopted you motherfucker you told you were my daddy bitch! DIE",
+"NodeName": "BasicDialogue7",
+"Ref": "GameEND"
+}, {
+"Actor": "Daugther",
+"Dialogue": "Well let's go to work i am going with you.",
+"NodeName": "BasicDialogue8",
+"Ref": "GoingEND"
+}, {
+"Actor": "Daugther",
+"Dialogue": "Well you go to work dad!",
+"NodeName": "BasicDialogue9",
+"Ref": "NormalEND"
+}, {
+"Actor": "Daugther",
+"Dialogue": "Fuck off",
+"NodeName": "BasicDialogue5",
+"Ref": "",
+"next": 10
+}, {
+"Choices": [ {
+"Conditional": "",
+"Dialogue": "Just a joke!",
+"PassCondition": true,
+"ToolTip": "",
+"next": 13
+}, {
+"Conditional": "",
+"Dialogue": "No why bitch?",
+"PassCondition": true,
+"ToolTip": "",
+"next": 11
+} ],
+"Conditonal": false,
+"NodeName": "ChoiceDialogue3",
+"Ref": ""
+}, {
+"Actor": "Daugther",
+"Dialogue": "Reeeee, DIE",
+"NodeName": "BasicDialogue10",
+"Ref": "GameEND"
+}, {
+"Actor": "Daugther",
+"Dialogue": "Wel you're still going to need to work...",
+"NodeName": "BasicDialogue6",
+"Ref": "NormalEND"
+}, {
+"Actor": "Daugther",
+"Dialogue": "Ha Ha very funny! Now go to work!",
+"NodeName": "BasicDialogue11",
+"Ref": "NormalEND"
+} ],
+"start_index": 5
+}

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/scary.jpg" type="Texture" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -3.01468
+margin_bottom = -3.01465
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = -113.126
+margin_top = -114.558
+margin_right = 1166.87
+margin_bottom = 605.442
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 464.658
+margin_top = 307.748
+margin_right = 544.658
+margin_bottom = 324.748
+text = "You died"

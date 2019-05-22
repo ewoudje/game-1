@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="left-up" width="100" height="100" tilewidth="32" tileheight="32" infinite="1" nextlayerid="8" nextobjectid="39">
+<map version="1.2" tiledversion="1.2.3" orientation="orthogonal" renderorder="left-up" width="100" height="100" tilewidth="32" tileheight="32" infinite="1" nextlayerid="8" nextobjectid="41">
  <tileset firstgid="1" source="../tilemap/OverWorld.tsx"/>
  <tileset firstgid="1025" source="../tilemap/ObjectSet.tsx"/>
  <layer id="1" name="Layer0" width="100" height="100">
@@ -336,6 +336,11 @@
     <property name="ConnectID" value="midLow"/>
     <property name="ConnectTo" value="highLow"/>
     <property name="Level" type="int" value="0"/>
+   </properties>
+  </object>
+  <object id="39" gid="1027" x="101" y="101" width="32" height="32">
+   <properties>
+    <property name="CharacterID" value="daugther"/>
    </properties>
   </object>
  </objectgroup>
